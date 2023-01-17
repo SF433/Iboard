@@ -1,0 +1,351 @@
+
+#####################
+#### MPINO-16A8R8T####
+#####################
+
+# General
+16A8R8T.name=MPINO-16A8R8T
+16A8R8T.upload.tool=avrdude
+16A8R8T.upload.maximum_data_size=8192
+16A8R8T.upload.maximum_size=261120
+16A8R8T.upload.speed=115200
+16A8R8T.upload.protocol=wiring
+16A8R8T.upload.port=UART0
+16A8R8T.bootloader.tool=avrdude
+16A8R8T.bootloader.unlock_bits=0x3f
+16A8R8T.bootloader.lock_bits=0x3C
+#16A8R8T.bootloader.low_fuses=0b{bootloader.bod_bits}{bootloader.sut_cksel_bits}
+#16A8R8T.bootloader.high_fuses=0b110{bootloader.ckopt_bit}{bootloader.eesave_bit}11{bootloader.bootrst_bit}
+16A8R8T.bootloader.low_fuses=0xFF
+16A8R8T.bootloader.high_fuses=0xD8
+16A8R8T.bootloader.extended_fuses=0xFD
+16A8R8T.build.core=MCUdude_corefiles
+16A8R8T.build.variant=16A8R8T
+16A8R8T.build.board=AVR_ATmega2560
+16A8R8T.build.mcu=atmega2560
+16A8R8T.build.bootloader_led=B7
+16A8R8T.build.f_cpu=16000000L
+16A8R8T.build.extra_flags={build.clkpr}
+16A8R8T.build.clkpr=
+
+# Upload port select
+16A8R8T.bootloader.uart0=Serial
+#16A8R8T.bootloader.upload.maximum_size=130048
+16A8R8T.bootloader.upload.protocol=arduino
+16A8R8T.bootloader.upload.port=UART0
+16A8R8T.bootloader.upload.speed=115200
+16A8R8T.bootloader.build.export_merged_output=true
+16A8R8T.bootloader.file=optiboot_flash/bootloaders/{build.mcu}/{build.f_cpu}/optiboot_flash_{build.mcu}_{upload.port}_{upload.speed}_{build.f_cpu}_{build.bootloader_led}_BIGBOOT.hex
+
+# Compiler link time optimization
+16A8R8T.menu.LTO.Os=LTO disabled
+16A8R8T.menu.LTO.Os.compiler.c.extra_flags=
+16A8R8T.menu.LTO.Os.compiler.c.elf.extra_flags=
+16A8R8T.menu.LTO.Os.compiler.cpp.extra_flags=
+16A8R8T.menu.LTO.Os.ltoarcmd=avr-ar
+
+
+#####################
+#### MPS-8A8R     ####
+#####################
+
+# General
+S8A8R.name=MPS-8A8R
+S8A8R.upload.tool=avrdude
+S8A8R.upload.maximum_data_size=8192
+S8A8R.bootloader.tool=avrdude
+S8A8R.bootloader.unlock_bits=0x3f
+S8A8R.bootloader.lock_bits=0x3C
+#S8A8R.bootloader.low_fuses=0b{bootloader.bod_bits}{bootloader.sut_cksel_bits}
+#S8A8R.bootloader.high_fuses=0b110{bootloader.ckopt_bit}{bootloader.eesave_bit}11{bootloader.bootrst_bit}
+S8A8R.bootloader.extended_fuses=0xFD
+S8A8R.bootloader.high_fuses=0xD8
+S8A8R.bootloader.low_fuses=0xFF
+S8A8R.build.core=MCUdude_corefiles
+S8A8R.build.variant=S8A8R
+S8A8R.build.board=AVR_ATmega2560
+S8A8R.build.mcu=atmega2560
+S8A8R.build.bootloader_led=B7
+S8A8R.build.f_cpu=14745600L
+
+# Upload port select
+S8A8R.menu.bootloader.uart0=Serial
+S8A8R.menu.bootloader.uart0.upload.maximum_size=130048
+S8A8R.menu.bootloader.uart0.upload.protocol=arduino
+S8A8R.menu.bootloader.uart0.upload.port=UART0
+S8A8R.menu.bootloader.uart0.upload.speed=115200
+S8A8R.menu.bootloader.uart0.build.export_merged_output=true
+S8A8R.menu.bootloader.uart0.bootloader.bootrst_bit=0
+S8A8R.menu.bootloader.uart0.bootloader.file=optiboot_flash/bootloaders/{build.mcu}/{build.f_cpu}/optiboot_flash_{build.mcu}_{upload.port}_{upload.speed}_{build.f_cpu}_{build.bootloader_led}_BIGBOOT.hex
+
+#S8A8R.menu.bootloader.uart1=Serial1
+#S8A8R.menu.bootloader.uart1.upload.maximum_size=130048
+#S8A8R.menu.bootloader.uart1.upload.protocol=arduino
+#S8A8R.menu.bootloader.uart1.upload.port=UART1
+#S8A8R.menu.bootloader.uart1.upload.speed=115200
+#S8A8R.menu.bootloader.uart1.build.export_merged_output=true
+#S8A8R.menu.bootloader.uart1.bootloader.bootrst_bit=0
+#S8A8R.menu.bootloader.uart1.bootloader.file=optiboot_flash/bootloaders/{build.mcu}/{build.f_cpu}/optiboot_flash_{build.mcu}_{upload.port}_{upload.speed}_{build.f_cpu}_{build.bootloader_led}_BIGBOOT.hex
+
+# EEPROM
+S8A8R.menu.eeprom.keep=EEPROM retained
+S8A8R.menu.eeprom.keep.bootloader.eesave_bit=0
+#S8A8R.menu.eeprom.erase=EEPROM not retained
+#S8A8R.menu.eeprom.erase.bootloader.eesave_bit=1
+
+# Brown out detection - This is the first part of the low fuse bit concatenation
+S8A8R.menu.BOD.2v7=BOD 2.7V
+S8A8R.menu.BOD.2v7.bootloader.bod_bits=10
+#S8A8R.menu.BOD.4v0=BOD 4.0V
+#S8A8R.menu.BOD.4v0.bootloader.bod_bits=00
+#S8A8R.menu.BOD.disabled=BOD disabled
+#S8A8R.menu.BOD.disabled.bootloader.bod_bits=11
+
+# Compiler link time optimization
+S8A8R.menu.LTO.Os=LTO disabled
+S8A8R.menu.LTO.Os.compiler.c.extra_flags=
+S8A8R.menu.LTO.Os.compiler.c.elf.extra_flags=
+S8A8R.menu.LTO.Os.compiler.cpp.extra_flags=
+S8A8R.menu.LTO.Os.ltoarcmd=avr-ar
+
+#S8A8R.menu.LTO.Os_flto=LTO enabled
+#S8A8R.menu.LTO.Os_flto.compiler.c.extra_flags=-Wextra -flto -g
+#S8A8R.menu.LTO.Os_flto.compiler.c.elf.extra_flags=-w -flto -g
+#S8A8R.menu.LTO.Os_flto.compiler.cpp.extra_flags=-Wextra -flto -g
+#S8A8R.menu.LTO.Os_flto.ltoarcmd=avr-gcc-ar
+
+# Clock frequencies
+#S8A8R.menu.clock.16MHz_external=External 16 MHz
+#S8A8R.menu.clock.16MHz_external.upload.speed=115200
+#S8A8R.menu.clock.16MHz_external.bootloader.sut_cksel_bits=111111
+#S8A8R.menu.clock.16MHz_external.bootloader.ckopt_bit=0
+#S8A8R.menu.clock.16MHz_external.build.f_cpu=16000000L
+
+S8A8R.menu.clock.14_7456MHz_external=External 14.7456 MHz
+S8A8R.menu.clock.14_7456MHz_external.upload.speed=115200
+S8A8R.menu.clock.14_7456MHz_external.bootloader.sut_cksel_bits=111111
+S8A8R.menu.clock.14_7456MHz_external.bootloader.ckopt_bit=0
+S8A8R.menu.clock.14_7456MHz_external.build.f_cpu=14745600L
+
+#####################
+####8A4RS####
+#####################
+
+# General
+8A4RS.name=MPINO-8A4RS
+8A4RS.upload.tool=avrdude
+8A4RS.upload.maximum_data_size=4096
+8A4RS.bootloader.tool=avrdude
+8A4RS.bootloader.unlock_bits=0x3f
+8A4RS.bootloader.lock_bits=0x3C
+#8A4RS.bootloader.low_fuses=0b{bootloader.bod_bits}{bootloader.sut_cksel_bits}
+#8A4RS.bootloader.high_fuses=0b110{bootloader.ckopt_bit}{bootloader.eesave_bit}11{bootloader.bootrst_bit}
+8A4RS.bootloader.low_fuses=0xbf
+8A4RS.bootloader.high_fuses=0xcc
+8A4RS.bootloader.extended_fuses=0xff
+8A4RS.build.core=MCUdude_corefiles
+8A4RS.build.variant=8A4RS
+8A4RS.build.board=AVR_ATmega128
+8A4RS.build.mcu=atmega128
+8A4RS.build.bootloader_led=E2
+
+8A4RS.eeprom.keep=EEPROM retained
+8A4RS.eeprom.keep.bootloader.eesave_bit=0
+
+8A4RS.BOD.2v7=BOD 2.7V
+8A4RS.BOD.2v7.bootloader.bod_bits=10
+
+8A4RS.LTO.Os=LTO disabled
+8A4RS.LTO.Os.compiler.c.extra_flags=
+8A4RS.LTO.Os.compiler.c.elf.extra_flags=
+8A4RS.LTO.Os.compiler.cpp.extra_flags=
+8A4RS.LTO.Os.ltoarcmd=avr-ar
+
+8A4RS.upload.maximum_size=130048
+8A4RS.upload.protocol=arduino
+8A4RS.upload.port=UART0
+8A4RS.upload.speed=115200
+8A4RS.build.export_merged_output=true
+8A4RS.bootloader.bootrst_bit=0
+8A4RS.bootloader.sut_cksel_bits=111111
+8A4RS.bootloader.ckopt_bit=0
+#8A4RS.build.f_cpu=14745600L
+8A4RS.build.f_cpu=16000000L
+8A4RS.bootloader.file=optiboot_flash/bootloaders/{build.mcu}/{build.f_cpu}/optiboot_flash_{build.mcu}_{upload.port}_{upload.speed}_{build.f_cpu}_{build.bootloader_led}_BIGBOOT.hex
+
+8A4RS.clock.14_7456MHz_external=External 14.7456 MHz
+8A4RS.clock.14_7456MHz_external.upload.speed=115200
+8A4RS.clock.14_7456MHz_external.bootloader.sut_cksel_bits=111111
+8A4RS.clock.14_7456MHz_external.bootloader.ckopt_bit=0
+8A4RS.clock.14_7456MHz_external.build.f_cpu=14745600L
+
+# Upload port select
+8A4RS.menu.bootloader.uart0=Serial
+8A4RS.menu.bootloader.uart0.upload.maximum_size=130048
+8A4RS.menu.bootloader.uart0.upload.protocol=arduino
+8A4RS.menu.bootloader.uart0.upload.port=UART0
+8A4RS.menu.bootloader.uart0.upload.speed=115200
+8A4RS.menu.bootloader.uart0.build.export_merged_output=true
+8A4RS.menu.bootloader.uart0.bootloader.bootrst_bit=0
+8A4RS.menu.bootloader.uart0.bootloader.file=optiboot_flash/bootloaders/{build.mcu}/{build.f_cpu}/optiboot_flash_{build.mcu}_{upload.port}_{upload.speed}_{build.f_cpu}_{build.bootloader_led}_BIGBOOT.hex
+
+#8A4RS.menu.bootloader.uart1=Serial1
+#8A4RS.menu.bootloader.uart1.upload.maximum_size=130048
+#8A4RS.menu.bootloader.uart1.upload.protocol=arduino
+#8A4RS.menu.bootloader.uart1.upload.port=UART1
+#8A4RS.menu.bootloader.uart1.upload.speed=115200
+#8A4RS.menu.bootloader.uart1.build.export_merged_output=true
+#8A4RS.menu.bootloader.uart1.bootloader.bootrst_bit=0
+#8A4RS.menu.bootloader.uart1.bootloader.file=optiboot_flash/bootloaders/{build.mcu}/{build.f_cpu}/optiboot_flash_{build.mcu}_{upload.port}_{upload.speed}_{build.f_cpu}_{build.bootloader_led}_BIGBOOT.hex
+
+# EEPROM
+8A4RS.menu.eeprom.keep=EEPROM retained
+8A4RS.menu.eeprom.keep.bootloader.eesave_bit=0
+#8A4RS.menu.eeprom.erase=EEPROM not retained
+#8A4RS.menu.eeprom.erase.bootloader.eesave_bit=1
+
+# Brown out detection - This is the first part of the low fuse bit concatenation
+8A4RS.menu.BOD.2v7=BOD 2.7V
+8A4RS.menu.BOD.2v7.bootloader.bod_bits=10
+#8A4RS.menu.BOD.4v0=BOD 4.0V
+#8A4RS.menu.BOD.4v0.bootloader.bod_bits=00
+#8A4RS.menu.BOD.disabled=BOD disabled
+#8A4RS.menu.BOD.disabled.bootloader.bod_bits=11
+
+# Compiler link time optimization
+8A4RS.menu.LTO.Os=LTO disabled
+8A4RS.menu.LTO.Os.compiler.c.extra_flags=
+8A4RS.menu.LTO.Os.compiler.c.elf.extra_flags=
+8A4RS.menu.LTO.Os.compiler.cpp.extra_flags=
+8A4RS.menu.LTO.Os.ltoarcmd=avr-ar
+
+#8A4RS.menu.LTO.Os_flto=LTO enabled
+#8A4RS.menu.LTO.Os_flto.compiler.c.extra_flags=-Wextra -flto -g
+#8A4RS.menu.LTO.Os_flto.compiler.c.elf.extra_flags=-w -flto -g
+#8A4RS.menu.LTO.Os_flto.compiler.cpp.extra_flags=-Wextra -flto -g
+#8A4RS.menu.LTO.Os_flto.ltoarcmd=avr-gcc-ar
+
+# Clock frequencies
+8A4RS.menu.clock.16MHz_external=External 16 MHz
+8A4RS.menu.clock.16MHz_external.upload.speed=115200
+8A4RS.menu.clock.16MHz_external.bootloader.sut_cksel_bits=111111
+8A4RS.menu.clock.16MHz_external.bootloader.ckopt_bit=0
+8A4RS.menu.clock.16MHz_external.build.f_cpu=16000000L
+
+8A4RS.menu.clock.14_7456MHz_external=External 14.7456 MHz
+8A4RS.menu.clock.14_7456MHz_external.upload.speed=115200
+8A4RS.menu.clock.14_7456MHz_external.bootloader.sut_cksel_bits=111111
+8A4RS.menu.clock.14_7456MHz_external.bootloader.ckopt_bit=0
+8A4RS.menu.clock.14_7456MHz_external.build.f_cpu=14745600L
+
+#####################
+#### ATmega128/A ####
+#####################
+
+# General
+8A4R.name=MPINO-8A4R
+8A4R.upload.tool=avrdude
+8A4R.upload.maximum_data_size=4096
+8A4R.bootloader.tool=avrdude
+8A4R.bootloader.unlock_bits=0x3f
+8A4R.bootloader.lock_bits=0x3c
+#8A4R.bootloader.low_fuses=0b{bootloader.bod_bits}{bootloader.sut_cksel_bits}
+#8A4R.bootloader.high_fuses=0b110{bootloader.ckopt_bit}{bootloader.eesave_bit}11{bootloader.bootrst_bit}
+8A4R.bootloader.low_fuses=0xbf
+8A4R.bootloader.high_fuses=0xcc
+8A4R.bootloader.extended_fuses=0xff
+8A4R.build.core=MCUdude_corefiles
+8A4R.build.variant=8A4R
+#8A4R.build.variant=64-pin-avr
+8A4R.build.board=AVR_ATmega128
+8A4R.build.mcu=atmega128
+8A4R.build.bootloader_led=E2
+
+8A4R.eeprom.keep=EEPROM retained
+8A4R.eeprom.keep.bootloader.eesave_bit=0
+
+8A4R.BOD.2v7=BOD 2.7V
+8A4R.BOD.2v7.bootloader.bod_bits=10
+
+8A4R.LTO.Os=LTO disabled
+8A4R.LTO.Os.compiler.c.extra_flags=
+8A4R.LTO.Os.compiler.c.elf.extra_flags=
+8A4R.LTO.Os.compiler.cpp.extra_flags=
+8A4R.LTO.Os.ltoarcmd=avr-ar
+
+8A4R.upload.maximum_size=130048
+8A4R.upload.protocol=arduino
+8A4R.upload.port=UART0
+8A4R.upload.speed=115200
+8A4R.build.export_merged_output=true
+8A4R.bootloader.bootrst_bit=0
+8A4R.bootloader.sut_cksel_bits=111111
+8A4R.bootloader.ckopt_bit=0
+#8A4R.build.f_cpu=14745600L
+8A4R.build.f_cpu  =16000000L
+8A4R.bootloader.file=optiboot_flash/bootloaders/{build.mcu}/{build.f_cpu}/optiboot_flash_{build.mcu}_{upload.port}_{upload.speed}_{build.f_cpu}_{build.bootloader_led}_BIGBOOT.hex
+
+8A4R.clock.14_7456MHz_external=External 14.7456 MHz
+8A4R.clock.14_7456MHz_external.upload.speed=115200
+8A4R.clock.14_7456MHz_external.bootloader.sut_cksel_bits=111111
+8A4R.clock.14_7456MHz_external.bootloader.ckopt_bit=0
+8A4R.clock.14_7456MHz_external.build.f_cpu=14745600L
+
+# Upload port select
+8A4R.menu.bootloader.uart0=Serial
+8A4R.menu.bootloader.uart0.upload.maximum_size=130048
+8A4R.menu.bootloader.uart0.upload.protocol=arduino
+8A4R.menu.bootloader.uart0.upload.port=UART0
+8A4R.menu.bootloader.uart0.upload.speed=115200
+8A4R.menu.bootloader.uart0.build.export_merged_output=true
+8A4R.menu.bootloader.uart0.bootloader.bootrst_bit=0
+8A4R.menu.bootloader.uart0.bootloader.file=optiboot_flash/bootloaders/{build.mcu}/{build.f_cpu}/optiboot_flash_{build.mcu}_{upload.port}_{upload.speed}_{build.f_cpu}_{build.bootloader_led}_BIGBOOT.hex
+
+#8A4R.menu.bootloader.uart1=Serial1
+#8A4R.menu.bootloader.uart1.upload.maximum_size=130048
+#8A4R.menu.bootloader.uart1.upload.protocol=arduino
+#8A4R.menu.bootloader.uart1.upload.port=UART1
+#8A4R.menu.bootloader.uart1.upload.speed=115200
+#8A4R.menu.bootloader.uart1.build.export_merged_output=true
+#8A4R.menu.bootloader.uart1.bootloader.bootrst_bit=0
+#8A4R.menu.bootloader.uart1.bootloader.file=optiboot_flash/bootloaders/{build.mcu}/{build.f_cpu}/optiboot_flash_{build.mcu}_{upload.port}_{upload.speed}_{build.f_cpu}_{build.bootloader_led}_BIGBOOT.hex
+
+# EEPROM
+8A4R.menu.eeprom.keep=EEPROM retained
+8A4R.menu.eeprom.keep.bootloader.eesave_bit=0
+#8A4R.menu.eeprom.erase=EEPROM not retained
+#8A4R.menu.eeprom.erase.bootloader.eesave_bit=1
+
+# Brown out detection - This is the first part of the low fuse bit concatenation
+8A4R.menu.BOD.2v7=BOD 2.7V
+8A4R.menu.BOD.2v7.bootloader.bod_bits=10
+#8A4R.menu.BOD.4v0=BOD 4.0V
+#8A4R.menu.BOD.4v0.bootloader.bod_bits=00
+#8A4R.menu.BOD.disabled=BOD disabled
+#8A4R.menu.BOD.disabled.bootloader.bod_bits=11
+
+# Compiler link time optimization
+8A4R.menu.LTO.Os=LTO disabled
+8A4R.menu.LTO.Os.compiler.c.extra_flags=
+8A4R.menu.LTO.Os.compiler.c.elf.extra_flags=
+8A4R.menu.LTO.Os.compiler.cpp.extra_flags=
+8A4R.menu.LTO.Os.ltoarcmd=avr-ar
+
+#8A4R.menu.LTO.Os_flto=LTO enabled
+#8A4R.menu.LTO.Os_flto.compiler.c.extra_flags=-Wextra -flto -g
+#8A4R.menu.LTO.Os_flto.compiler.c.elf.extra_flags=-w -flto -g
+#8A4R.menu.LTO.Os_flto.compiler.cpp.extra_flags=-Wextra -flto -g
+#8A4R.menu.LTO.Os_flto.ltoarcmd=avr-gcc-ar
+
+# Clock frequencies
+8A4R.menu.clock.16MHz_external=External 16 MHz
+8A4R.menu.clock.16MHz_external.upload.speed=115200
+8A4R.menu.clock.16MHz_external.bootloader.sut_cksel_bits=111111
+8A4R.menu.clock.16MHz_external.bootloader.ckopt_bit=0
+8A4R.menu.clock.16MHz_external.build.f_cpu=16000000L
+
+8A4R.menu.clock.14_7456MHz_external=External 14.7456 MHz
+8A4R.menu.clock.14_7456MHz_external.upload.speed=115200
+8A4R.menu.clock.14_7456MHz_external.bootloader.sut_cksel_bits=111111
+8A4R.menu.clock.14_7456MHz_external.bootloader.ckopt_bit=0
+8A4R.menu.clock.14_7456MHz_external.build.f_cpu=14745600L

@@ -1,0 +1,309 @@
+
+# Menu options
+# menu.clock=Clock
+# menu.BOD=BOD
+# menu.eeprom=EEPROM
+# menu.LTO=Compiler LTO
+ menu.pinout=Pinout
+# menu.bootloader=Upload Channel
+
+#####################
+####  8A4R(T)S     ####
+#####################
+# General
+8A4R(T)S.name=MPINO-8A4R(T)-S
+8A4R(T)S.upload.tool=avrdude
+8A4R(T)S.upload.maximum_data_size=4096
+8A4R(T)S.upload.maximum_size=130048
+8A4R(T)S.upload.speed=115200
+8A4R(T)S.upload.protocol=arduino
+8A4R(T)S.upload.port=UART0
+8A4R(T)S.bootloader.tool=avrdude
+8A4R(T)S.bootloader.unlock_bits=0x3f
+8A4R(T)S.bootloader.lock_bits=0x3C
+#8A4R(T)S.bootloader.low_fuses=0b{bootloader.bod_bits}{bootloader.sut_cksel_bits}
+#8A4R(T)S.bootloader.high_fuses=0b110{bootloader.ckopt_bit}{bootloader.eesave_bit}11{bootloader.bootrst_bit}
+8A4R(T)S.bootloader.low_fuses=0xbf
+8A4R(T)S.bootloader.high_fuses=0xcc
+8A4R(T)S.bootloader.extended_fuses=0xff
+8A4R(T)S.build.core=MCUdude_corefiles
+8A4R(T)S.build.variant=8A4R(T)S
+8A4R(T)S.build.board=AVR_ATmega128
+8A4R(T)S.build.mcu=atmega128
+8A4R(T)S.build.bootloader_led=E2
+8A4R(T)S.build.f_cpu=16000000L
+
+# Upload port select
+8A4R(T)S.bootloader.uart0=Serial
+#8A4R(T)S.bootloader.upload.maximum_size=130048
+8A4R(T)S.bootloader.upload.protocol=arduino
+8A4R(T)S.bootloader.upload.port=UART0
+8A4R(T)S.bootloader.upload.speed=115200
+8A4R(T)S.bootloader.build.export_merged_output=true
+8A4R(T)S.bootloader.file=optiboot_flash/bootloaders/{build.mcu}/{build.f_cpu}/optiboot_flash_{build.mcu}_{upload.port}_{upload.speed}_{build.f_cpu}_{build.bootloader_led}_BIGBOOT.hex
+
+# Compiler link time optimization
+8A4R(T)S.menu.LTO.Os=LTO disabled
+8A4R(T)S.menu.LTO.Os.compiler.c.extra_flags=
+8A4R(T)S.menu.LTO.Os.compiler.c.elf.extra_flags=
+8A4R(T)S.menu.LTO.Os.compiler.cpp.extra_flags=
+8A4R(T)S.menu.LTO.Os.ltoarcmd=avr-ar
+
+#####################
+#### MPS-8A8RS     ####
+#####################
+
+# General
+8A8R_S.name=MPINO-8A8R(T)-S
+8A8R_S.upload.tool=avrdude
+8A8R_S.upload.maximum_data_size=4096
+8A8R_S.upload.maximum_size=130048
+8A8R_S.upload.speed=115200
+8A8R_S.upload.protocol=arduino
+8A8R_S.upload.port=UART0
+8A8R_S.bootloader.tool=avrdude
+8A8R_S.bootloader.unlock_bits=0x3f
+8A8R_S.bootloader.lock_bits=0x3C
+#8A8R_S.bootloader.low_fuses=0b{bootloader.bod_bits}{bootloader.sut_cksel_bits}
+#8A8R_S.bootloader.high_fuses=0b110{bootloader.ckopt_bit}{bootloader.eesave_bit}11{bootloader.bootrst_bit}
+8A8R_S.bootloader.low_fuses=0xbf
+8A8R_S.bootloader.high_fuses=0xcc
+8A8R_S.bootloader.extended_fuses=0xff
+8A8R_S.build.core=MCUdude_corefiles
+8A8R_S.build.variant=8A8R-S
+8A8R_S.build.board=AVR_ATmega128
+8A8R_S.build.mcu=atmega128
+8A8R_S.build.bootloader_led=E2
+8A8R_S.build.f_cpu=16000000L
+
+# Upload port select
+8A8R_S.bootloader.uart0=Serial
+#8A8R_S.bootloader.upload.maximum_size=130048
+8A8R_S.bootloader.upload.protocol=arduino
+8A8R_S.bootloader.upload.port=UART0
+8A8R_S.bootloader.upload.speed=115200
+8A8R_S.bootloader.build.export_merged_output=true
+8A8R_S.bootloader.file=optiboot_flash/bootloaders/{build.mcu}/{build.f_cpu}/optiboot_flash_{build.mcu}_{upload.port}_{upload.speed}_{build.f_cpu}_{build.bootloader_led}_BIGBOOT.hex
+
+# Compiler link time optimization
+8A8R_S.menu.LTO.Os=LTO disabled
+8A8R_S.menu.LTO.Os.compiler.c.extra_flags=
+8A8R_S.menu.LTO.Os.compiler.c.elf.extra_flags=
+8A8R_S.menu.LTO.Os.compiler.cpp.extra_flags=
+8A8R_S.menu.LTO.Os.ltoarcmd=avr-ar
+
+#####################
+#### MPINO-16A16R  ####
+#####################
+
+# General
+16A16R.name=MPINO-16A16R(T)
+16A16R.upload.tool=avrdude
+16A16R.upload.maximum_data_size=4096
+16A16R.upload.maximum_size=130048
+16A16R.upload.speed=115200
+16A16R.upload.protocol=arduino
+16A16R.upload.port=UART0
+16A16R.bootloader.tool=avrdude
+16A16R.bootloader.unlock_bits=0x3f
+16A16R.bootloader.lock_bits=0x3C
+#16A16R.bootloader.low_fuses=0b{bootloader.bod_bits}{bootloader.sut_cksel_bits}
+#16A16R.bootloader.high_fuses=0b110{bootloader.ckopt_bit}{bootloader.eesave_bit}11{bootloader.bootrst_bit}
+16A16R.bootloader.low_fuses=0xbf
+16A16R.bootloader.high_fuses=0xcc
+16A16R.bootloader.extended_fuses=0xff
+16A16R.build.core=MCUdude_corefiles
+16A16R.build.variant=16A16R
+16A16R.build.board=AVR_ATmega128
+16A16R.build.mcu=atmega128
+16A16R.build.bootloader_led=E2
+16A16R.build.f_cpu=16000000L
+
+# Upload port select
+16A16R.bootloader.uart0=Serial
+16A16R.bootloader.upload.protocol=arduino
+16A16R.bootloader.upload.port=UART0
+16A16R.bootloader.upload.speed=115200
+16A16R.bootloader.build.export_merged_output=true
+16A16R.bootloader.file=optiboot_flash/bootloaders/{build.mcu}/{build.f_cpu}/optiboot_flash_{build.mcu}_{upload.port}_{upload.speed}_{build.f_cpu}_{build.bootloader_led}_BIGBOOT.hex
+
+# Compiler link time optimization
+16A16R.menu.LTO.Os=LTO disabled
+16A16R.menu.LTO.Os.compiler.c.extra_flags=
+16A16R.menu.LTO.Os.compiler.c.elf.extra_flags=
+16A16R.menu.LTO.Os.compiler.cpp.extra_flags=
+16A16R.menu.LTO.Os.ltoarcmd=avr-ar
+
+#####################
+####  MPAINO128     ####
+#####################
+
+# General
+MPAINO128.name=MPAINO-128Serise
+MPAINO128.upload.tool=avrdude
+MPAINO128.upload.maximum_data_size=4096
+MPAINO128.upload.maximum_size=130048
+MPAINO128.upload.speed=115200
+MPAINO128.upload.protocol=arduino
+MPAINO128.upload.port=UART0
+MPAINO128.bootloader.tool=avrdude
+MPAINO128.bootloader.unlock_bits=0x3f
+MPAINO128.bootloader.lock_bits=0x3C
+#MPAINO128.bootloader.low_fuses=0b{bootloader.bod_bits}{bootloader.sut_cksel_bits}
+#MPAINO128.bootloader.high_fuses=0b110{bootloader.ckopt_bit}{bootloader.eesave_bit}11{bootloader.bootrst_bit}
+MPAINO128.bootloader.low_fuses=0xbf
+MPAINO128.bootloader.high_fuses=0xcc
+MPAINO128.bootloader.extended_fuses=0xff
+MPAINO128.build.core=MCUdude_corefiles
+MPAINO128.build.variant=MPAINO_128
+MPAINO128.build.board=AVR_ATmega128
+MPAINO128.build.mcu=atmega128
+MPAINO128.build.bootloader_led=E2
+MPAINO128.build.f_cpu=16000000L
+
+# Upload port select
+MPAINO128.bootloader.uart0=Serial
+#MPAINO128.bootloader.upload.maximum_size=130048
+MPAINO128.bootloader.upload.protocol=arduino
+MPAINO128.bootloader.upload.port=UART0
+MPAINO128.bootloader.upload.speed=115200
+MPAINO128.bootloader.build.export_merged_output=true
+MPAINO128.bootloader.file=optiboot_flash/bootloaders/{build.mcu}/{build.f_cpu}/optiboot_flash_{build.mcu}_{upload.port}_{upload.speed}_{build.f_cpu}_{build.bootloader_led}_BIGBOOT.hex
+
+# Compiler link time optimization
+MPAINO128.menu.LTO.Os=LTO disabled
+MPAINO128.menu.LTO.Os.compiler.c.extra_flags=
+MPAINO128.menu.LTO.Os.compiler.c.elf.extra_flags=
+MPAINO128.menu.LTO.Os.compiler.cpp.extra_flags=
+MPAINO128.menu.LTO.Os.ltoarcmd=avr-ar
+
+
+#####################
+#### MPINO_Serise  ####
+#####################
+
+# General
+MPINO2560.name=MPINO-2560Serise
+MPINO2560.upload.tool=avrdude
+MPINO2560.upload.maximum_data_size=8192
+MPINO2560.upload.maximum_size=261120
+MPINO2560.upload.speed=115200
+MPINO2560.upload.protocol=wiring
+MPINO2560.upload.port=UART0
+MPINO2560.bootloader.tool=avrdude
+MPINO2560.bootloader.unlock_bits=0x3f
+MPINO2560.bootloader.lock_bits=0x3C
+#MPINO2560.bootloader.low_fuses=0b{bootloader.bod_bits}{bootloader.sut_cksel_bits}
+#MPINO2560.bootloader.high_fuses=0b110{bootloader.ckopt_bit}{bootloader.eesave_bit}11{bootloader.bootrst_bit}
+MPINO2560.bootloader.low_fuses=0xFF
+MPINO2560.bootloader.high_fuses=0xD8
+MPINO2560.bootloader.extended_fuses=0xFD
+MPINO2560.build.core=MCUdude_corefiles
+MPINO2560.build.variant=MPINO_2560
+MPINO2560.build.board=AVR_ATmega2560
+MPINO2560.build.mcu=atmega2560
+MPINO2560.build.bootloader_led=B7
+MPINO2560.build.f_cpu=16000000L
+
+# Upload port select
+MPINO2560.bootloader.uart0=Serial
+MPINO2560.bootloader.upload.protocol=arduino
+MPINO2560.bootloader.upload.port=UART0
+MPINO2560.bootloader.upload.speed=115200
+MPINO2560.bootloader.build.export_merged_output=true
+MPINO2560.bootloader.file=optiboot_flash/bootloaders/{build.mcu}/{build.f_cpu}/optiboot_flash_{build.mcu}_{upload.port}_{upload.speed}_{build.f_cpu}_{build.bootloader_led}_BIGBOOT.hex
+
+# Compiler link time optimization
+MPINO2560.menu.LTO.Os=LTO disabled
+MPINO2560.menu.LTO.Os.compiler.c.extra_flags=
+MPINO2560.menu.LTO.Os.compiler.c.elf.extra_flags=
+MPINO2560.menu.LTO.Os.compiler.cpp.extra_flags=
+MPINO2560.menu.LTO.Os.ltoarcmd=avr-ar
+
+
+#####################
+#### MPAINO_Serise  ####
+#####################
+
+# General
+MPAINO2560.name=MPAINO-2560Serise
+MPAINO2560.upload.tool=avrdude
+MPAINO2560.upload.maximum_data_size=8192
+MPAINO2560.upload.maximum_size=261120
+MPAINO2560.upload.speed=115200
+MPAINO2560.upload.protocol=wiring
+MPAINO2560.upload.port=UART0
+MPAINO2560.bootloader.tool=avrdude
+MPAINO2560.bootloader.unlock_bits=0x3f
+MPAINO2560.bootloader.lock_bits=0x3C
+#MPAINO2560.bootloader.low_fuses=0b{bootloader.bod_bits}{bootloader.sut_cksel_bits}
+#MPAINO2560.bootloader.high_fuses=0b110{bootloader.ckopt_bit}{bootloader.eesave_bit}11{bootloader.bootrst_bit}
+MPAINO2560.bootloader.low_fuses=0xFF
+MPAINO2560.bootloader.high_fuses=0xD8
+MPAINO2560.bootloader.extended_fuses=0xFD
+MPAINO2560.build.core=MCUdude_corefiles
+MPAINO2560.build.variant=MPAINO_2560
+MPAINO2560.build.board=AVR_ATmega2560
+MPAINO2560.build.mcu=atmega2560
+MPAINO2560.build.bootloader_led=B7
+MPAINO2560.build.f_cpu=16000000L
+
+# Upload port select
+MPAINO2560.bootloader.uart0=Serial
+MPAINO2560.bootloader.upload.protocol=arduino
+MPAINO2560.bootloader.upload.port=UART0
+MPAINO2560.bootloader.upload.speed=115200
+MPAINO2560.bootloader.build.export_merged_output=true
+MPAINO2560.bootloader.file=optiboot_flash/bootloaders/{build.mcu}/{build.f_cpu}/optiboot_flash_{build.mcu}_{upload.port}_{upload.speed}_{build.f_cpu}_{build.bootloader_led}_BIGBOOT.hex
+
+# Compiler link time optimization
+MPAINO2560.menu.LTO.Os=LTO disabled
+MPAINO2560.menu.LTO.Os.compiler.c.extra_flags=
+MPAINO2560.menu.LTO.Os.compiler.c.elf.extra_flags=
+MPAINO2560.menu.LTO.Os.compiler.cpp.extra_flags=
+MPAINO2560.menu.LTO.Os.ltoarcmd=avr-ar
+
+
+
+#####################
+#### MPAINO_Serise  ####
+#####################
+#MPAINO_2560_S
+
+# General
+MPAINO2560S.name=MPAINO-2560Serise_EXIO
+MPAINO2560S.upload.tool=avrdude
+MPAINO2560S.upload.maximum_data_size=8192
+MPAINO2560S.upload.maximum_size=261120
+MPAINO2560S.upload.speed=115200
+MPAINO2560S.upload.protocol=wiring
+MPAINO2560S.upload.port=UART0
+MPAINO2560S.bootloader.tool=avrdude
+MPAINO2560S.bootloader.unlock_bits=0x3F
+MPAINO2560S.bootloader.lock_bits=0x3C
+#MPAINO2560S.bootloader.low_fuses=0b{bootloader.bod_bits}{bootloader.sut_cksel_bits}
+#MPAINO2560S.bootloader.high_fuses=0b110{bootloader.ckopt_bit}{bootloader.eesave_bit}11{bootloader.bootrst_bit}
+MPAINO2560S.bootloader.low_fuses=0xFF
+MPAINO2560S.bootloader.high_fuses=0xD8
+MPAINO2560S.bootloader.extended_fuses=0xFD
+MPAINO2560S.build.core=MCUdude_corefiles
+MPAINO2560S.build.variant=MPAINO_2560_S
+MPAINO2560S.build.board=AVR_ATmega2560
+MPAINO2560S.build.mcu=atmega2560
+MPAINO2560S.build.bootloader_led=B7
+MPAINO2560S.build.f_cpu=16000000L
+
+# Upload port select
+MPAINO2560S.bootloader.uart0=Serial
+MPAINO2560S.bootloader.upload.protocol=arduino
+MPAINO2560S.bootloader.upload.port=UART0
+MPAINO2560S.bootloader.upload.speed=115200
+MPAINO2560S.bootloader.build.export_merged_output=true
+MPAINO2560S.bootloader.file=optiboot_flash/bootloaders/{build.mcu}/{build.f_cpu}/optiboot_flash_{build.mcu}_{upload.port}_{upload.speed}_{build.f_cpu}_{build.bootloader_led}_BIGBOOT.hex
+
+# Compiler link time optimization
+MPAINO2560S.menu.LTO.Os=LTO disabled
+MPAINO2560S.menu.LTO.Os.compiler.c.extra_flags=
+MPAINO2560S.menu.LTO.Os.compiler.c.elf.extra_flags=
+MPAINO2560S.menu.LTO.Os.compiler.cpp.extra_flags=
+MPAINO2560S.menu.LTO.Os.ltoarcmd=avr-ar
